@@ -1,26 +1,48 @@
 #include <iostream>
+#include <direct.h>
+#include <string>
+
 using namespace std;
 
-int main(int argc, char** argv) {
-	
-	int number = 1;
-		
-	cout << "MAIN MENU\n";
-	cout << "1. List files in the current directory.\n";
-	cout << "2. Create a new directory.\n";
-	cout << "3. Change the working directory.\n";
-	cout << "4. Exit the program.\n";
-	
-	
-	
-	
-	cout << "Enter the number:";
-	cin >> number;
-	cout << "1. List all files in the current directory.\n";
-	cout << "2. List files based on a specific extension (e.g., .txt).\n";
-	cout << "3. List files based on a pattern (e.g., moha*.*).\n";
-	
-	
-	
-	return 0;
+void list_file();
+void directory();
+void change_dir();
+
+int main() {
+    int input;
+
+    while (true) {
+    	cout << "\n";
+        cout << "\tMain Menu" << endl;
+        cout << "\n";
+
+        cout << "\t1. To Display List of Files\n";
+        cout << "\t2. To Create New Directory\n";
+        cout << "\t3. To Change the Working Directory\n";
+        cout << "\t4. Exit\n";
+
+        cout << "Enter Number: ";
+        cin >> input;
+
+        switch (input) {
+            case 1:
+                list_file();
+                break;
+
+            case 2:
+                directory();
+                break;
+
+            case 3:
+                change_dir();
+                break;
+
+            case 4:
+                return 0;
+
+            default:
+                cout << "Invalid choice. Please try again..." << endl;
+        }
+    }
+    return 0;
 }
